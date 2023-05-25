@@ -51,3 +51,23 @@ link.forEach((elem) => {
   strong.textContent = "Hi guys!";
   elem.appendChild(strong);
 });
+
+// third
+/*
+В начало документа (в начало body) добавить картинку img с атрибутами src и alt (текст придумайте сами).
+В src добавьте реальный url к картинке. Для создания элемента используйте метод createElement.
+*/
+
+const fragment = document.createDocumentFragment();
+const img = document.createElement("img");
+img.setAttribute(
+  "src",
+  "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=1200&s=1"
+);
+img.setAttribute("alt", "img");
+fragment.appendChild(img);
+document.body.insertAdjacentElement("afterbegin", img);
+// img.src =
+//   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=1200&s=1";
+
+//

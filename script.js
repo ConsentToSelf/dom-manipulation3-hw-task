@@ -19,7 +19,7 @@
 */
 
 let list = document.querySelector("ul");
-// const filteredList = [...list.children];
+const filteredList = [...list.children];
 // const current = list.children.length;
 // function getNewDom(args) {
 //   const fragment = document.createDocumentFragment();
@@ -76,18 +76,31 @@ document.body.insertAdjacentElement("afterbegin", img);
 Найти на странице элемент mark, добавить в конец содержимого текст “green” и на элемент установить класс green
 */
 
-const paragraph = document.querySelector("p");
-const filterP = [...paragraph.children];
-console.dir(document.querySelector("mark"));
+// const paragraph = document.querySelector("p");
+// const filterP = [...paragraph.children];
+// console.dir(document.querySelector("mark"));
 
-function filteredToGet(args) {
-  for (let i = 0; i < args.length; i++) {
-    if (args[i].nodeName == "mark".toUpperCase()) {
-      args[i].textContent = "green";
-      args[i].classList.add("green");
-    }
-  }
-  return args;
-}
-const res = filteredToGet(filterP);
-console.log(res);
+// function filteredToGet(args) {
+//   for (let i = 0; i < args.length; i++) {
+//     if (args[i].nodeName == "mark".toUpperCase()) {
+//       args[i].textContent = "green";
+//       args[i].classList.add("green");
+//     }
+//   }
+//   return args;
+// }
+// const res = filteredToGet(filterP);
+// console.log(res);
+
+// five
+
+/*
+Отсортировать li внутри списка в обратном порядке (по тексту внутри)
+*/
+
+// console.log(filteredList)
+const listItems = [...list.children].sort((prev, next) => {
+  return prev.textContent > next.textContent ? -1 : 1;
+});
+list.innerHTML = "";
+listItems.forEach((item) => list.appendChild(item));

@@ -70,4 +70,24 @@ document.body.insertAdjacentElement("afterbegin", img);
 // img.src =
 //   "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/29/5c/img-worlds-of-adventure.jpg?w=1200&h=1200&s=1";
 
-//
+//fourth
+
+/*
+Найти на странице элемент mark, добавить в конец содержимого текст “green” и на элемент установить класс green
+*/
+
+const paragraph = document.querySelector("p");
+const filterP = [...paragraph.children];
+console.dir(document.querySelector("mark"));
+
+function filteredToGet(args) {
+  for (let i = 0; i < args.length; i++) {
+    if (args[i].nodeName == "mark".toUpperCase()) {
+      args[i].textContent = "green";
+      args[i].classList.add("green");
+    }
+  }
+  return args;
+}
+const res = filteredToGet(filterP);
+console.log(res);
